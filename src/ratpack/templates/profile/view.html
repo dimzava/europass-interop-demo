@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Profile | Europass Interoperability Demo</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/demo.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>JobPortal.eu <small>My Profile</small></h1>
+    </div>
+    <h3>${model?.profile?.firstName} ${model?.profile?.surname}</h3>
+    <table class="table table-hover">
+        <tr><th>Email</th><td>${model?.profile?.email}</td></tr>
+        <tr><th>Telephone</th><td>${model?.profile?.telephone}</td></tr>
+        <tr><th>...</th><td>...</td></tr>
+        <tr><th>Job applied for</th><td>${model?.profile?.headline}</td></tr>
+        <tr><th>...</th><td>...</td></tr>
+        <tr><th>Computer Skills</th><td>${model?.profile?.computerSkills}</td></tr>
+    </table>
+
+    <a class="btn btn-default btn-lg" role="button" href="/profile/update/${model?.profile?.id}">
+        Edit <span class="glyphicon glyphicon-edit"></span></a>
+    <a class="btn btn-default btn-lg" role="button" href="/profile/${model?.profile.id}/pdf" target="_blank">
+        PDF <span class="glyphicon glyphicon-file"></span></a>
+</div>
+</body>
+</html>

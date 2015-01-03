@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile | Europass Interoperability Demo</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/demo.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>JobPortal.eu <small>${!model.profile ? 'Create Profile' : 'Edit Profile'}</small></h1>
+    </div>
+
+    <form class="form-horizontal" role="form" action="" method="post">
+        <div class="form-group">
+            <label for="first-name" class="col-sm-2 control-label">First Name</label>
+            <div class="col-xs-5">
+                <input class="form-control" id="first-name" name="firstName" value="${model?.profile?.firstName ?: ''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="surname" class="col-sm-2 control-label">Surname</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="surname" name="surname" value="${model?.profile?.surname ?: ''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="email" name="email" value="${model?.profile?.email ?: ''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="telephone" class="col-sm-2 control-label">Telephone</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="telephone" name="telephone" value="${model?.profile?.telephone ?: ''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="blank" class="col-sm-2 control-label">...</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="blank" name="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="job-applied-for" class="col-sm-2 control-label">Job Applied For</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="job-applied-for" name="headline" value="${model?.profile?.headline ?: ''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="blank2" class="col-sm-2 control-label">...</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="blank2" name="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="computer-skills" class="col-sm-2 control-label">Computer Skills</label>
+            <div class="col-xs-5">
+                <textarea class="form-control" id="computer-skills" name="computerSkills">${model?.profile?.computerSkills ?: ''}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default btn-lg">
+                    Save <span class="glyphicon glyphicon-ok"></span></button>
+            </div>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

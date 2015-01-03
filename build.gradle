@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.ratpack:ratpack-gradle:0.9.8"
+    }
+}
+
+apply plugin: "io.ratpack.ratpack-groovy"
+apply plugin: "idea"
+apply plugin: "eclipse"
+
+repositories {
+    jcenter()
+    maven { url "http://repo.springsource.org/repo" } // for springloaded
+}
+
+dependencies {
+    springloaded "org.springframework:springloaded:1.2.0.RELEASE"
+
+    compile ratpack.dependency("h2")
+    compile ratpack.dependency("hikari")
+
+    compile 'com.itextpdf:itextpdf:5.5.2'
+    compile 'org.bouncycastle:bcpkix-jdk15on:1.49'
+    compile 'org.bouncycastle:bcprov-jdk15on:1.49'
+    compile 'com.github.groovy-wslite:groovy-wslite:1.1.0'
+
+    runtime 'org.slf4j:slf4j-simple:1.7.7'
+    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+}
